@@ -37,7 +37,7 @@ def _get_nsp_data_from_paragraph(paragraph, paragraphs, vocab, max_len):
         # token_a, token_b就是一会放进Bert的token, is_next就是两个句子是否相邻的label
         tokens_a, tokens_b, is_next = _get_next_sentence(
             paragraph[i], paragraph[i + 1], paragraphs)
-        # 考虑1个'<cls>'词元和2个'<sep>'词元
+        # 考虑1个'<cls>'词元和2个'<sep>'词元 
         if len(tokens_a) + len(tokens_b) + 3 > max_len:
             continue
         tokens, segments = d2l.get_tokens_and_segments(tokens_a, tokens_b)
